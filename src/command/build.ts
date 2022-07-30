@@ -5,7 +5,6 @@ import { defaultCompileOptions } from './const';
 
 export default (opts: Options) => {
   const { entryPoints, outdir, watch, minify } = opts;
-
   build({
     entryPoints,
     outdir,
@@ -13,7 +12,7 @@ export default (opts: Options) => {
     minify,
     bundle: true,
     splitting: false,
-    sourcemap: watch,
+    sourcemap: opts.sourcemap ?? watch,
 
     watch: watch
       ? {
