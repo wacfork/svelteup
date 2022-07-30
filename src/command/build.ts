@@ -10,6 +10,7 @@ export default (opts: Options) => {
     outdir,
     format: 'esm',
     minify,
+    charset: 'utf8',
     bundle: true,
     splitting: false,
     sourcemap: opts.sourcemap ?? watch,

@@ -12,6 +12,7 @@ export default (opts: Options) => {
   build({
     entryPoints,
     outdir,
+    charset: 'utf8',
     format: 'esm',
     minify: false,
     bundle: true,
