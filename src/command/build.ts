@@ -28,6 +28,7 @@ export default (opts: Options) => {
         }
       : false,
     plugins: [
+      ...(opts.esbuild?.plugins || []),
       coffeeScriptPlugin({
         bare: true,
         inlineMap: true
