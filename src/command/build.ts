@@ -41,6 +41,7 @@ export default (opts: Options) => {
         },
       }),
     ],
+    ...(opts.esbuild || {})
   });
 
   console.log('[Success] All components are bundled');
