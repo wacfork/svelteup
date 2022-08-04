@@ -10,7 +10,6 @@ export default (opts: Options) => {
     entryPoints,
     outdir,
     format: 'esm',
-    minify,
     charset: 'utf8',
     bundle: true,
     splitting: false,
