@@ -5,7 +5,11 @@ import { defaultCompileOptions } from './const';
 import coffeeScriptPlugin from '@iuser/esbuild-coffeescript';
 
 export default (opts: Options) => {
-  const { entryPoints, outdir, watch, minify } = opts;
+  const { entryPoints, outdir, watch, minify, esbuild } = opts;
+  const esbuild_plugins = esbuild?.plugins || [];
+  if(esbuild){
+    delete esbuild.plugins;
+  }
   build({
     entryPoints,
     outdir,
@@ -27,7 +31,7 @@ export default (opts: Options) => {
         }
       : false,
     plugins: [
-      ...(opts.esbuild?.plugins || []),
+      ...esbuild_plugins,
       coffeeScriptPlugin({
         bare: true,
         inlineMap: true
