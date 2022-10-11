@@ -38,6 +38,7 @@ export default (opts: Options) => {
       }),
       sveltePlugin({
         preprocess: opts.preprocess,
+        filterWarnings:opts.onwarn,
         compilerOptions: {
           ...defaultCompileOptions,
           ...opts.compilerOptions,
