@@ -8,8 +8,8 @@ sade('svelteup [entry]', true)
   .version(pkg.version)
   .describe(
     'Bundle your Svelte Components \r\n    ' +
-      'Parameter Entry can be a file \r\n    ' +
-      "Default Entry 'components'",
+    'Parameter Entry can be a file \r\n    ' +
+    "Default Entry 'components'",
   )
   .example('-s public')
   .example('bundle.js')

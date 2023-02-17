@@ -2,18 +2,22 @@ import { build } from 'esbuild';
 import sveltePlugin from 'esbuild-svelte';
 import { Options } from '../interface/CommandOptions';
 import { defaultCompileOptions } from './const';
+import coffeeScriptPlugin from '@iuser/esbuild-coffeescript';
 
 export default (opts: Options) => {
-  const { entryPoints, outdir, watch, minify } = opts;
-
+  const { entryPoints, outdir, watch, minify, esbuild } = opts;
+  const esbuild_plugins = esbuild?.plugins || [];
+  if(esbuild){
+    delete esbuild.plugins;
+  }
   build({
     entryPoints,
     outdir,
     format: 'esm',
-    minify,
+    charset: 'utf8',
     bundle: true,
     splitting: false,
-    sourcemap: watch,
+    sourcemap: opts.sourcemap ?? watch,
 
     watch: watch
       ? {
@@ -27,14 +31,21 @@ export default (opts: Options) => {
         }
       : false,
     plugins: [
+      ...esbuild_plugins,
+      coffeeScriptPlugin({
+        bare: true,
+        inlineMap: true
+      }),
       sveltePlugin({
         preprocess: opts.preprocess,
+        filterWarnings:opts.onwarn,
         compilerOptions: {
           ...defaultCompileOptions,
           ...opts.compilerOptions,
         },
       }),
     ],
+    ...(opts.esbuild || {})
   });
 
   console.log('[Success] All components are bundled');
