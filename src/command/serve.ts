@@ -18,15 +18,15 @@ export default (opts: Options) => {
     bundle: true,
     splitting: false,
     sourcemap: true,
-    watch: {
-      onRebuild(error) {
-        if (error) console.error('[Error] Watch build:', error);
-        else {
-          console.log('[Success] File Rebuilding...');
-          opts.onRebuild && opts.onRebuild();
-        }
-      },
-    },
+    // watch: {
+    //   onRebuild(error) {
+    //     if (error) console.error('[Error] Watch build:', error);
+    //     else {
+    //       console.log('[Success] File Rebuilding...');
+    //       opts.onRebuild && opts.onRebuild();
+    //     }
+    //   },
+    // },
     plugins: [
       sveltePlugin({
         preprocess: opts.preprocess,

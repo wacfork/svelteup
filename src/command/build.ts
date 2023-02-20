@@ -5,7 +5,7 @@ import { defaultCompileOptions } from './const';
 import coffeeScriptPlugin from '@iuser/esbuild-coffeescript';
 
 export default (opts: Options) => {
-  const { entryPoints, outdir, watch, minify, esbuild } = opts;
+  const { entryPoints, outdir, minify, esbuild } = opts;
   const esbuild_plugins = esbuild?.plugins || [];
   if(esbuild){
     delete esbuild.plugins;
@@ -19,17 +19,17 @@ export default (opts: Options) => {
     splitting: false,
     sourcemap: opts.sourcemap ?? watch,
 
-    watch: watch
-      ? {
-          onRebuild(error, result) {
-            if (error) console.error('[Error] Watch build:', error);
-            else {
-              console.log('[Success] File Rebuilding...');
-              opts.onRebuild && opts.onRebuild();
-            }
-          },
-        }
-      : false,
+    // watch: watch
+    //   ? {
+    //       onRebuild(error, result) {
+    //         if (error) console.error('[Error] Watch build:', error);
+    //         else {
+    //           console.log('[Success] File Rebuilding...');
+    //           opts.onRebuild && opts.onRebuild();
+    //         }
+    //       },
+    //     }
+    //   : false,
     plugins: [
       ...esbuild_plugins,
       coffeeScriptPlugin({
