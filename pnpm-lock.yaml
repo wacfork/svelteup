@@ -7,7 +7,7 @@ specifiers:
   '@types/sade': ^1.7.4
   '@typescript-eslint/eslint-plugin': ^5.55.0
   '@typescript-eslint/parser': ^5.55.0
-  '@w5/esbuild-coffeescript': ^0.0.2
+  '@w5/esbuild-coffeescript': ^0.0.3
   autoprefixer: ^10.4.14
   bundle-require: ^4.0.1
   esbuild: ^0.17.12
@@ -50,7 +50,7 @@ devDependencies:
   '@types/sade': 1.7.4
   '@typescript-eslint/eslint-plugin': 5.55.0_qsnvknysi52qtaxqdyqyohkcku
   '@typescript-eslint/parser': 5.55.0_j4766f7ecgqbon3u7zlxn5zszu
-  '@w5/esbuild-coffeescript': 0.0.2
+  '@w5/esbuild-coffeescript': 0.0.3
   autoprefixer: 10.4.14_postcss@8.4.21
   eslint: 8.36.0
   eslint-config-prettier: 8.7.0_eslint@8.36.0
@@ -541,8 +541,8 @@ packages:
     resolution: {integrity: sha512-O67qYWwFJOFKOq7Agpa7bheF+U0j3NKLuVm84eojoOsgpTQuJmLw5VyjD1FcZQvrbVuby7xbVISEBsrWZk+rBQ==}
     dev: true
 
-  /@w5/coffee_plus/0.0.11:
-    resolution: {integrity: sha512-7SMdDSSih7Ir9Dttqs49cxlVeOH+tTnCxEWd8wtBHAyy72awe4S13I16DNacEryu4kM1dDRAkkloctsk//kjqA==}
+  /@w5/coffee_plus/0.0.12:
+    resolution: {integrity: sha512-lw+riVAMVyoEr0ROWY7Jpeuv9d5iwCDg3/6YhKzVrIDJ5ggCuG7t/LIe0oZ2SFG/IeT+fNXPJN3g1OeQ/VihKA==}
     hasBin: true
     dependencies:
       '@w5/camel': 0.0.1
@@ -554,10 +554,10 @@ packages:
       yargs: 17.7.1
     dev: true
 
-  /@w5/esbuild-coffeescript/0.0.2:
-    resolution: {integrity: sha512-eYvt6bVIGyDTSdfWKGNz84WjsJzPstMLzCpGCCLEv1Fz/8U896o2tc/aU9Pzts/VftMH7MeiaUu9PNV7bSROuQ==}
+  /@w5/esbuild-coffeescript/0.0.3:
+    resolution: {integrity: sha512-fBe30IsFap0CX6Dyz1fT6Wtkk7D3cE3dH1z8Oc0RxtHZHG7MfS/PiMHQ9B5TYFgi2NguX5r+Yq5YN4DCZW5Hgw==}
     dependencies:
-      '@w5/coffee_plus': 0.0.11
+      '@w5/coffee_plus': 0.0.12
       coffeescript: 2.7.0
       esbuild: 0.17.12
     dev: true
