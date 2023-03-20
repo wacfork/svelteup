@@ -2,7 +2,7 @@ import { build } from 'esbuild';
 import sveltePlugin from 'esbuild-svelte';
 import { Options } from '../interface/CommandOptions';
 import { defaultCompileOptions } from './const';
-import coffeeScriptPlugin from '@iuser/esbuild-coffeescript';
+import coffeeScriptPlugin from '@w5/esbuild-coffeescript';
 
 export default (opts: Options) => {
   const { entryPoints, outdir, minify, esbuild } = opts;
