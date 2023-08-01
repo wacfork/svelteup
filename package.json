@@ -42,7 +42,7 @@
     "livereload": "^0.9.3",
     "sade": "^1.8.1",
     "sirv": "^2.0.3",
-    "svelte": "^4.1.1"
+    "svelte": "^4.1.2"
   },
   "devDependencies": {
     "@w5/esbuild-coffeescript": "^0.0.3",
